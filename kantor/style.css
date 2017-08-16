@@ -1,0 +1,21 @@
+body{
+    background: lightblue;
+    
+}
+#siano {
+    border:2px solid black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 100px
+}
+#count{
+    color:white;
+    background: black;
+    border: 1px solid black;
+    width: 60px;
+    border-radius: 20px;
+}
+h1{
+    background: grey
+        
+}
