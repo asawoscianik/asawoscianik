@@ -1,4 +1,21 @@
- <ul>
-     <li ng-repeat="user in users"><a href="#!/user/{{user.id}}">{{user.name}} {{user.lastname}}</a></li>
- </ul>    
- 
+<hr>
+<input type="text" ng-model="name" placeholder="name"/>
+<input type="text" ng-model="lastname" placeholder="lastname"/>
+<button type="button" ng-click="add()">Dodaj</button>
+
+<hr>
+
+        
+     <div ng-repeat="user in users">
+        <span ng-show="editID == user.id">
+         <input type="text" ng-model="user.name">
+         <input type="text" ng-model="user.lastname">
+        </span>
+         <a href="#!/user/{{user.id}}">{{user.name}} {{user.lastname}}</a>
+<button ng-click="delete(user.id)"> Usun</button>
+  <a ng-click="edit(user.id)" href="#!/edit/">Edytuj</a>
+
+</div>
+  
+     
+    
