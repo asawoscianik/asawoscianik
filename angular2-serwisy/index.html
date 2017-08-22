@@ -1,0 +1,22 @@
+<html ng-app="myApp">
+    <head>
+      <title>STRONKA</title>
+      <meta charset="utf-8">
+<!--      <link rel="stylesheet" href="css/">-->
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href ="#!/">Strona glowna</a></li>
+                <li><a href="#!/add">Dodaj film</a></li>
+                <li><a href="#!/show">Pokaz filmy</a></li>
+            </ul>
+        </nav>
+        
+        <div ng-view></div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.6.4/angular-route.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
