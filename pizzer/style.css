@@ -1,0 +1,75 @@
+body{
+    background-color:cornflowerblue; 
+    margin: 0%;
+    padding: 0%;
+    color: white;
+    
+}
+
+.logowanie{
+    display: none;
+}
+
+.section1 img{
+     display: block;
+     margin: 0 auto;
+}
+
+.logowanie input{
+    border: 1px solid black;
+    border-radius:3px;
+}
+
+.pizza{
+    cursor: pointer;
+}
+
+#nazwaPizzeri{
+    color:darkgoldenrod;
+    font-size: 1.1em;
+}
+
+h3{
+    margin-bottom: 5vh;
+    color: white
+}
+
+#link{
+    margin-top: 3vh;
+    position: fixed;
+}
+
+.boosters{
+    background-color:crimson;
+    width: 18vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.boosters > ul > li{
+    display: inline-block;
+}
+
+.boostItem{
+    
+}
+
+.boosters {
+   list-style-type: none;
+   padding: 10px 0;
+}
+
+.boosters > li {
+   padding: 2% 50%;
+   background-size: contain;
+   background-position: left;
+     
+}
+
+.boostItem{
+   background-repeat: no-repeat;
+   padding-left: 500px;
+   
+}
