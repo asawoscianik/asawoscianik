@@ -1,0 +1,121 @@
+body{
+    margin-top:20px;
+}
+
+#section1{
+  
+}
+
+#section2{
+    
+    img{
+        width: 100%;
+    }
+}
+
+#section3{
+    background-color:black;
+    margin-bottom:20px;
+    color:white;
+    text-align:center;
+    vertical-align:middle;
+    input{
+         width: 23%;
+        text-decoration: underline;
+        border:1px solid black;
+        border-radius: 10px;
+        color:black;
+    }
+     button{
+         text-align: center;
+        width: 8%;  
+        color:gray;
+        background-color: white;
+        border:1px solid gray;
+        border-radius:10px;
+    }
+    
+}
+
+#section4{
+    img{
+        width:100%;
+    }
+}
+
+#section5{
+    img{
+        width:100%;
+    }
+}
+
+#section7{
+    img{
+        width:100%;
+    }
+}
+
+#section6{
+    text-align: center;
+    height:20vh;
+    background-color: black; 
+    margin-bottom:20px;
+    margin-top: 20px;
+    vertical-align: middle;
+    color:white;
+    input{
+        width: 23%;
+        text-decoration: underline;
+        border:1px solid black;
+        border-radius: 10px;
+        color:black;
+    }
+    button{
+         text-align: center;
+        width: 8%;  
+        color:gray;
+        background-color: white;
+        border:1px solid gray;
+        border-radius:10px;
+    }
+}
+
+.section8{
+    margin-top: 30px;
+    margin-bottom:30px;
+    button{
+        text-align: center;
+        width: 15%;
+        height: 60px;
+        color:gray;
+        background-color: white;
+        border:1px solid gray;
+        border-radius:10px;
+    }
+    button:hover{
+        background: red;
+        color: black;
+    }
+}
+
+#section9{
+    background-color: black;
+    padding-top:20px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+ul{
+    list-style-type: none;
+    li{
+        float:right;
+        margin-left:2vw;
+        text-decoration: none;
+    }
+    li a:hover{
+        cursor: pointer;
+        color: red;
+        text-decoration: underline;
+    }
+}
+
