@@ -1,0 +1,62 @@
+#litery span{ 
+    float:left;
+    display: block;
+    width: 5vw;
+    font-size: 3em;
+    background: red;
+    border:1px solid black;
+    margin-left:5vw;
+    margin-bottom: 5vh;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+
+#litery span:hover{
+    background-color: darkred; 
+}
+
+#obrazki img{
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.3));
+    display: block;
+    height: 35h;
+    text-align: center;
+    margin-bottom: 5vh;  
+}
+
+#litera span{ 
+    float:left;
+    display: block;
+    width: 3vw;
+    font-size: 2em;
+    background: red;
+    border:1px solid black;
+    margin-left:1vw;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+
+#litera{
+    margin-left:30%;
+}
+
+h1{
+    text-align:center;
+}
+
+#pusty span{
+    float:left;
+    display: block;
+    width: 3vw;
+    font-size: 2em;
+    text-align: center;
+    margin-left:1vw;
+    margin-bottom:5vh;
+}
+
+#pusty{
+    margin-left:30%;
+}
