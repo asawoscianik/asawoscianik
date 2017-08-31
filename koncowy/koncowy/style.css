@@ -6,7 +6,7 @@
     background: red;
     border:1px solid black;
     margin-left:5vw;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
     cursor: pointer;
     text-align: center;
     border-radius: 10px;
@@ -26,21 +26,20 @@
 }
 
 #litera span{ 
-    float:left;
-    display: block;
+     float:left;
     width: 3vw;
     font-size: 2em;
-    background: red;
-    border:1px solid black;
-    margin-left:1vw;
-    cursor: pointer;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    margin-left:1vw;
+    margin-bottom:5vh;
+    height: 40px;
+    
 }
 
 #litera{
-    margin-left:30%;
+/*  position: absolute;*/
+    margin-left: 30.2%;
+  
 }
 
 h1{
@@ -49,14 +48,26 @@ h1{
 
 #pusty span{
     float:left;
-    display: block;
     width: 3vw;
     font-size: 2em;
     text-align: center;
     margin-left:1vw;
     margin-bottom:5vh;
+    border:1px solid black;
+    height: 40px;
 }
 
 #pusty{
-    margin-left:30%;
+/*
+    display: flex;
+    justify-content: center;
+*/
+    margin-left: 31%;
+    margin-bottom: 100px;
+}
+
+#button button{
+    float:right;
+    display: none;
+    
 }

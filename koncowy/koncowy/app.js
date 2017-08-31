@@ -8,14 +8,22 @@ $(document).ready(function(){
 
     var RandomLetters = [];
     
+    
+  
     var numberek = 0;
+    $('#button1').click(function(){
+        odpal(0);
+        $('#button1').hide();
+       
+      });  
     
     $('#button').click(function(){
-        numberek = numberek+1;
-    });
-     
-    
-   
+        $('#button').hide();
+        
+        odpal(numberek);
+    })
+
+   function odpal(){
 
     //----------------------------------------------------------------------------------
     //wszystkie loga
@@ -58,10 +66,8 @@ $(document).ready(function(){
             var xd = theAnswer[numberek]
             
             for(var i = 0;i<answer[numberek].length;i++){
-                $('#pusty').append('<span>' + ' __ ');
+                $('#pusty').append('<span>' + ' ');
             }
-            
-        //}
 
     }
 
@@ -108,9 +114,8 @@ $(document).ready(function(){
                 
                 
                 newArr.push(splited[j]);
-            }
-            
-        
+            }    
+
     }
          
 
@@ -158,8 +163,6 @@ $(document).ready(function(){
         }
         return array;
         
-       
-        
     }
     
     console.log(shuffleArray());
@@ -169,17 +172,63 @@ $(document).ready(function(){
     //                                  Znikanie liter
     //--------------------------------------------------------------------------------------
     
-   $('#litery span').click(function(e){
-       
-       console.log(this);
-       
-        $('#litera').append(this)
-       
-   });
+    var count = 0;
     
+    var nowyarr = []; 
+       
+    
+  $('#litery span').click(function(e){
+       
+      var arrx =[];
+      
+     arrx.push(this.innerText);
+      
+      var arrwynik = nowyarr.join('');
+      
+        console.log(arrwynik);
+      
+      console.log(answer[numberek]);
+      
+      if(arrwynik == answer[numberek]){
+          
+          alert('Brawo')
+          $('#button button').css("display", "block"); 
+          $('#button').show();
+          numberek++
+      }
+     
+    $('#litera').append(this);  
+        
+    count++;
+        
+//    console.log(count);
+    $('#litera span').off();
+      
+    if(count > answer[numberek].length-1){
+             
+        $('#litery span').off();
+             
+     }
+     
+  }); 
+       
+       $('#litera span').click(function(e){
+           
+          alert('heh');
+          
+          $(this).replaceWith('');
+          
+          $(this).append('#litery span');
+          
+          arrwynik.split('').pop().join('');
+          
+          
+           
+       });
+       
+  }
     
 });
-
 
 
 
