@@ -172,30 +172,26 @@ $(document).ready(function(){
     //                                  Znikanie liter
     //--------------------------------------------------------------------------------------
     
-    var count = 0;
+    
     
     var nowyarr = []; 
        
+    var arrwynik = [];
+       
+    var count = 0;
+       
     
   $('#litery span').click(function(e){
-       
-      var arrx =[];
       
-     arrx.push(this.innerText);
+     nowyarr.push(this.innerText);
       
-      var arrwynik = nowyarr.join('');
+      arrwynik = nowyarr.join('');
       
-        console.log(arrwynik);
+      console.log(arrwynik);
+      
+      console.log(nowyarr);
       
       console.log(answer[numberek]);
-      
-      if(arrwynik == answer[numberek]){
-          
-          alert('Brawo')
-          $('#button button').css("display", "block"); 
-          $('#button').show();
-          numberek++
-      }
      
     $('#litera').append(this);  
         
@@ -204,27 +200,35 @@ $(document).ready(function(){
 //    console.log(count);
     $('#litera span').off();
       
-    if(count > answer[numberek].length-1){
+      $('#litera span').click(function(e){
+           
+          alert(this);
+          
+          $(this).replaceWith();
+          
+          nowyarr.pop();
+          
+          count--;
+          
+          ('#litery span').append(this);
+           
+       });
+      
+     if(count > answer[numberek].length-1){
              
         $('#litery span').off();
              
      }
-     
+      
+     if(arrwynik == answer[numberek]){
+          
+        alert('Brawo')
+        $('#button button').css("display", "block"); 
+        $('#button').show();
+        numberek++
+      }
+      
   }); 
-       
-       $('#litera span').click(function(e){
-           
-          alert('heh');
-          
-          $(this).replaceWith('');
-          
-          $(this).append('#litery span');
-          
-          arrwynik.split('').pop().join('');
-          
-          
-           
-       });
        
   }
     
