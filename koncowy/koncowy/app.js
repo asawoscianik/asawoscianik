@@ -1,94 +1,81 @@
 $(document).ready(function(){
-
     var logo = ["ikony/android.png","ikony/chrome.png","ikony/firefox.png","ikony/html5.png","ikony/origin.png","ikony/slack.png","ikony/twitter.png","ikony/windows.png"];
-
     var answer = ["ANDROID","CHROME","FIREFOX","HTML5","ORIGIN","SLACK","TWITTER","WINDOWS"];
-
     var letters = ["A","B",'C','D','E','F','G','H','I','J','K','L','M','N','O','P','R','S','T','U','W','V','X','Y','Z'];
-
     var RandomLetters = [];
     
     
-  
+    var count = 0;
     var numberek = 0;
+    
     $('#button1').click(function(){
-        odpal(0);
-        $('#button1').hide();
-       
+        
+        odpal();
+//        $('#button1').hide();
+//        $('h1').hide();
+        $('.section0').hide();
       });  
     
     $('#button').click(function(){
         $('#button').hide();
-        
         odpal(numberek);
-    })
-
+    });
+    
    function odpal(){
-
     //----------------------------------------------------------------------------------
     //wszystkie loga
     //----------------------------------------------------------------------------------
-
     
     function getLogo(){
-
         var theLogo = logo;
-
         for(var i = 0; i<theLogo.length;i++){
-
-            return theLogo[1];
-
+            return theLogo[i];
         }
         
         //$('#obrazki').append('<img src="' + theLogo[0] + ' "/> ')
-
     }
+       
+    $('img[src="' + logo[numberek-1] + '"]').remove();
     $('#obrazki').append("<img src='" + logo[numberek] + "' />");
-
+    console.log(getLogo());
+    
     console.log(getLogo());
         
     
 //------------------------------------------------------------------------------------ //                                   wszystkie odpowiedzi iteracja
 //--------------------------------------------------------------------------------------    
-
     function getAnswer(){
-
-        var theAnswer = answer;
-
-       // for(var i = 0;i < theAnswer.length;i++){
-
-            //return theAnswer; wszystkie odpowiedzi
-            
-            var splited = theAnswer[numberek].split('');
-            
-            console.log(splited);  
         
-            var xd = theAnswer[numberek]
+        var theAnswer = answer;
+            
+        var splited = theAnswer[numberek].split('');
+            
+        console.log(splited);  
+        
+        if(numberek>0){
+        
+            for(var i = 0;i<answer[numberek-1].length;i++){
+                $('#pusty span' + ' ').remove();
+            }
+            }
             
             for(var i = 0;i<answer[numberek].length;i++){
                 $('#pusty').append('<span>' + ' ');
             }
-
-    }
-
-    console.log(getAnswer());
+        
+            
+        }
+    getAnswer();
 //-----------------------------------------------------------------------------------------
     
     //wszystkie litery
-
 //---------------------------------------------------------------------------------------    
     function getLetter(){
-
         var theLetter = letters;
-
         for(var i = 0; i < theLetter.length; i++){
-
             return theLetter;
-
         }
-
     }
-
     //console.log(getLetter());
     
 //------------------------------------------------------------------------------------//    
@@ -101,9 +88,7 @@ $(document).ready(function(){
     function LosoweLitery(){
         
         var theAnswer = answer[numberek];
-
         for(var i = 0;i < theAnswer.length;i++){
-
             //return theAnswer; wszystkie odpowiedzi
             
             var splited = theAnswer[i].split('');
@@ -115,24 +100,22 @@ $(document).ready(function(){
                 
                 newArr.push(splited[j]);
             }    
-
-    }
+        }
+        
          
-
         for(var i = 0; i < 21-answer[numberek].length; i++) {
-
+            
             var randomIndex = Math.floor(Math.random() * letters.length);
-
+            
             var randomLetter = letters[randomIndex];
             
-
             newArr.push(randomLetter);
+            
         }
        
       return newArr;
         
     }
-
     LosoweLitery();
     //-------------------------------------------------------------------------------
     
@@ -140,33 +123,41 @@ $(document).ready(function(){
     
     //-------------------------------------------------------------------------------
     
+    var shuffleArr = []
+    
     function shuffleArray(array) {
         
-        var array = newArr;
+        shuffleArr = newArr;
         
-        for (var i = array.length - 1; i > 0; i--) {
+        for (var i = shuffleArr.length - 1; i > 0; i--) {
             
             var j = Math.floor(Math.random() * (i + 1));
             
-            var temp = array[i];
+            var temp = shuffleArr[i];
             
-            array[i] = array[j]
+            shuffleArr[i] = shuffleArr[j]
             
-            array[j] = temp;
+            shuffleArr[j] = temp;
             
         } 
         
-        for(var i = 0; i<array.length;i++){ 
+        if(numberek>0){
+              
+              $('#litera span').remove();
+              $('#litery span').remove();
+              
+          }
+        
+        for(var i = 0; i<shuffleArr.length;i++){ 
          
-            $('#litery').append('<span>' + array[i] + ' ');
-            //$('#litery').append(`<span> ${array[i]}  </span>`);  
+            $('#litery').append('<span>' + shuffleArr[i] + '');
+             
         }
-        return array;
+        return shuffleArr;
         
     }
     
-    console.log(shuffleArray());
-    
+    shuffleArray()
     
     //--------------------------------------------------------------------------------------
     //                                  Znikanie liter
@@ -177,64 +168,53 @@ $(document).ready(function(){
     var nowyarr = []; 
        
     var arrwynik = [];
-       
-    var count = 0;
-       
     
-  $('#litery span').click(function(e){
+  $(document).on('click', '#litery span', function(e){
+      
+      if(nowyarr.length < answer[numberek].length){ 
       
      nowyarr.push(this.innerText);
       
       arrwynik = nowyarr.join('');
       
-      console.log(arrwynik);
+      //console.log(arrwynik);
       
-      console.log(nowyarr);
+      //console.log(nowyarr);
       
-      console.log(answer[numberek]);
+      //console.log(answer[numberek]);
      
-    $('#litera').append(this);  
-        
-    count++;
-        
-//    console.log(count);
-    $('#litera span').off();
+      $('#litera').append(this);  
+
+      $('#litera span').off();
       
-      $('#litera span').click(function(e){
-           
-          alert(this);
+      if(arrwynik == answer[numberek]){
           
-          $(this).replaceWith();
+        count++;  
+          
+        //alert('Brawo')
+          
+        $('#button button').css("display", "block"); 
+        
+        numberek++;
+          
+        $('#button').show();
+      }
+      
+   }
+          
+  });    
+
+   $(document).on('click', '#litera span', function(e){
           
           nowyarr.pop();
           
-          count--;
-          
-          ('#litery span').append(this);
+          $('#litery').append(this);
            
-       });
-      
-     if(count > answer[numberek].length-1){
-             
-        $('#litery span').off();
-             
-     }
-      
-     if(arrwynik == answer[numberek]){
-          
-        alert('Brawo')
-        $('#button button').css("display", "block"); 
-        $('#button').show();
-        numberek++
-      }
-      
-  }); 
+   });
+    
        
   }
     
 });
-
-
-
 
 
